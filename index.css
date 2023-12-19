@@ -1,0 +1,190 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('bg-pattern.svg');
+    background-repeat: no-repeat;
+    background-color: hsl(230, 100%, 99%);
+    text-align: center;
+}
+
+
+#circles {
+    margin-top: 25px;
+    position: absolute;
+    left: 45vw;
+}
+
+h1 {
+    position: relative;
+    top: 65px;
+    margin-top: 0px;
+    margin-bottom: 80px;
+    color: hsl(227, 35%, 25%);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 29px;
+}
+
+p {
+    color: hsl(225, 20%, 60%);
+    font-family: 'Manrope', sans-serif;
+}
+
+.small-text {
+    font-size: 12px;
+}
+
+span {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    color: hsl(227, 35%, 25%);
+    font-size: 45px;
+}
+
+.center-vertically {
+    display: flex; 
+    align-items: center;
+    margin-top: 0;
+}
+
+.discount {
+    color: hsl(15, 100%, 70%);
+    background-color: hsl(14, 92%, 95%);
+    font-size: 10px;
+    border-radius: 12px;
+    padding: 5px 8px;
+    margin-left: 8px;
+}
+
+.container {
+    width: 500px;
+    background-color: white;
+    margin: 75px auto auto auto;
+    border-radius: 7px;
+    padding: 30px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.05);
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) 50%, hsl(224, 65%, 95%) 50%, hsl(224, 65%, 95%) 100%);
+    margin: 25px auto 30px auto;
+}
+
+.slider::-webkit-range-progress {
+    background-color: #43e5f7; 
+  }
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: hsl(174, 86%, 45%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 4px rgba(165, 243, 235, 1);
+    background: hsl(174, 86%, 45%) url('icon-slider.svg') no-repeat center;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    cursor: pointer;
+    background-color: hsl(227, 35%, 25%);
+    transition: 200ms;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    margin: auto 12px auto 8px;
+    width: 48px;
+    height: 23px;
+    background-color: hsl(223, 50%, 87%);
+    border-radius: 20px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.05);
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label {
+    background-color: hsl(174, 86%, 45%);
+}
+
+@keyframes move {
+    from {margin-left: 3px;} 
+    to {margin-left: 26px;}
+}
+
+@keyframes move-reverse {
+    from {margin-left: 26px;} 
+    to {margin-left: 3px;}
+}
+
+
+.circle {
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    background-color: white;
+    margin-left: 3px;
+    margin-top: 2.5px;
+}
+
+
+.animated-element {
+    animation: move 1s forwards;
+}
+
+.reverse-animated-element {
+    animation: move-reverse 1s forwards;
+}
+
+button {
+    height: 45px;
+    width: 150px;
+    border-radius: 40px;
+    background-color: hsl(227, 35%, 25%);
+    color: hsl(225, 20%, 60%);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    border: none;
+}
+
+button:hover {
+    color: white;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.margin-right {
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

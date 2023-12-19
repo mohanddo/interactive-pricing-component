@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive pricing component</title>
+
+</head>
+<body>
+
+  <svg id="circles" xmlns="http://www.w3.org/2000/svg" width="146" height="145"><g fill="none" fill-rule="evenodd" stroke="#CFD8EF"><circle cx="63" cy="82" r="62.5"/><circle cx="105" cy="41" r="40.5"/></g></svg>
+
+  <h1>Simple, traffic-based pricing</h1>
+  <p style="font-size: 15px;">Sign-up for our 30-day trial. No credit card required.</p>
+
+  
+  <div class="container">
+
+    <div class="space-between">
+      <p class="center-vertically" style="letter-spacing: 2.5px; font-size: 0.9em;">100k PAGEVIEWS</p>
+      <p class="center-vertically"><span>$18</span> /month</p>
+    </div>
+
+    <div class="slidecontainer">
+      <input type="range" min="8" max="36" step="4"  class="slider">
+    </div>
+
+    <div style="display: flex; justify-content: flex-end;" class="center-vertically">
+      <p class="small-text">Monthly Billing</p>    
+      <input type="checkbox" id="checkbox">
+      <label for="checkbox">
+        <div class="circle"></div>
+      </label>
+      <p class="small-text">Yearly Billing</p>
+      <p class="discount">25% discount</p>
+    </div>
+
+    <div class="space-between center-vertically" style="margin-top: 40px;">
+      <div>
+
+        <div class="row center-vertically">
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg>
+          <p class="small-text margin-right">Unlimited websites</p>
+        </div>
+
+        <div class="row center-vertically">
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg>
+          <p class="small-text margin-right">100% data ownership</p>
+        </div>
+
+        <div class="row center-vertically">
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg>
+          <p class="small-text margin-right">Email reports</p>
+        </div>
+
+      </div>
+
+      <button>Start my trial</button>
+    </div>
+
+  </div>
+  
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script>
+    let checkbox = document.querySelector('input[type="checkbox"]');
+    let circle = document.getElementsByClassName('circle')[0];
+    let label = document.querySelector("label");
+    let slider = document.querySelector('.slider');
+    let cost = document.querySelector('span');
+
+    
+    label.addEventListener("click", () => {
+      
+      if(!checkbox.checked) {       
+        circle.classList.add('animated-element');
+        circle.classList.remove('reverse-animated-element');
+        slider.min = 2;
+        slider.max = 14;
+        slider.step = 2;
+        slider.style.background = 'linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ' + (((slider.value  * (100/(slider.max - slider.min))) - (slider.min * 100)/(slider.max - slider.min)) + '%, hsl(224, 65%, 95%) ' + ((slider.value  * (100/(slider.max - slider.min))) - (slider.min * 100)/(slider.max - slider.min)) + '%, hsl(224, 65%, 95%) 100%)');
+        cost.textContent = `$${slider.value}`;
+      } else {       
+        circle.classList.add('reverse-animated-element');
+        circle.classList.remove('animated-element');     
+        slider.min = 8;
+        slider.max = 36;
+        slider.step = 4;
+        slider.style.background = 'linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ' + (((slider.value  * (100/(slider.max - slider.min))) - (slider.min * 100)/(slider.max - slider.min)) + '%, hsl(224, 65%, 95%) ' + ((slider.value  * (100/(slider.max - slider.min))) - (slider.min * 100)/(slider.max - slider.min)) + '%, hsl(224, 65%, 95%) 100%)');
+        cost.textContent = `$${slider.value}`;
+      }
+    }) 
+    
+    
+
+    slider.addEventListener('input', () => {
+      cost.textContent = `$${slider.value}`;
+      slider.style.background = 'linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ' + (((slider.value  * (100/(slider.max - slider.min))) - (slider.min * 100)/(slider.max - slider.min)) + '%, hsl(224, 65%, 95%) ' + ((slider.value  * (100/(slider.max - slider.min))) - (slider.min * 100)/(slider.max - slider.min)) + '%, hsl(224, 65%, 95%) 100%)');
+    })
+  </script>
+</body>
+</html>
