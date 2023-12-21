@@ -103,6 +103,7 @@
     
 
     slider.addEventListener('input', () => {
+      console.log(window.innerWidth);
       cost.textContent = `$${slider.value}`;
       slider.style.background = 'linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ' + (((slider.value  * (100/(slider.max - slider.min))) - (slider.min * 100)/(slider.max - slider.min)) + '%, hsl(224, 65%, 95%) ' + ((slider.value  * (100/(slider.max - slider.min))) - (slider.min * 100)/(slider.max - slider.min)) + '%, hsl(224, 65%, 95%) 100%)');
     })
